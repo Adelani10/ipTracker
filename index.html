@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+    <title>Track IP Address</title>
+</head>
+<body>
+    <main class="container mx-auto p-2 flex flex-col h-screen  box-border">
+        <header class="pt-2 top space-y-4 h-[40%] relative">
+            <form class="form space-y-5 relative md:space-y-6 pt-3 text-center">
+                <p class="alert absolute top-0 left-0 right-0 text-sm mx-6 md:mx-24 font-thin rounded-lg hidden tracking-widest"></p>
+                <h1 class="text-2xl md:text-4xl font-bold text-white text-center">
+                    IP Address Tracker
+                </h1>
+                <div class="flex justify-center ">
+                    <input type="text" class="h-10 input w-[80%] md:w-[40%] pl-4 rounded-l-xl border-none" placeholder="Search for any IP address">
+                    <button type="submit" class="h-10 border bg-black px-5 md:px-12 rounded-r-xl border-none hover:bg-zinc-500">
+                        <img src="./imgs/icon-arrow.svg" class="" alt="">
+                    </button>
+                </div>
+            </form>
+            <div class="pop-up-info py-4 md:py-8  text-center bg-white absolute z-10 bottom-[-120px] md:bottom-[-52px] left-5 right-5 md:left-24 md:right-24 space-y-4 md:space-y-0 rounded-xl md:flex">
+                <div class="address text-black font-bold md:w-1/4">
+                    <p class="text-zinc-400 text-[8px] tracking-widest uppercase font-bold">
+                        Ip address
+                    </p>
+                    <h1 class="text-lg">192.212.174.101</h1>
+                </div>
+                <div class="location text-black font-bold md:w-1/4 md:border-l">
+                    <p class="text-zinc-400 text-[8px] tracking-widest uppercase font-bold">
+                        location
+                    </p>
+                    <h1 class="text-lg">Brooklyn, NY 10001</h1>
+                </div>
+                <div class="address text-black font-bold md:w-1/4 md:border-l">
+                    <p class="text-zinc-400 text-[8px] tracking-widest uppercase font-bold">
+                        timezone
+                    </p>
+                    <h1 class="text-lg">UTC -05:00</h1>
+                </div>
+                <div class="address text-black font-bold md:w-1/4 md:border-l">
+                    <p class="text-zinc-400 text-[8px] tracking-widest uppercase font-bold">
+                        Isp
+                    </p>
+                    <h1 class="text-lg">SpaceX Starlink</h1>
+                </div>
+            </div>
+        </header>
+        <div class="bottom-part h-[60%] relative bg-zinc-300">
+            <div id="map" class="h-full w-full absolute bottom-0 top-0 left-0 z-0"></div>
+            <img src="./imgs/icon-location.svg" class="absolute marks top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]" alt="marker">
+        </div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
